@@ -1,0 +1,12 @@
+{
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true"
+  },
+  "extends": "airbnb",
+  "rules": {
+    "max-len": [2, 120, 2],
+    "new-cap": 0,
+    "quote-props": [2, "consistent-as-needed"],
+    "semi": [2, "never"]
+  }
+}

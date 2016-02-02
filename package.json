@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": { 
+  "scripts": {
     "cover": "babel-istanbul cover ./node_modules/.bin/tape '!(build|node_modules)/**/*.test.js'",
     "dev": "webpack-dev-server --watch-poll --host 0.0.0.0",
     "test": "tape -r babel-register '!(build|node_modules)/**/*.test.js' | faucet"
@@ -35,6 +35,7 @@
     "fileloader": "^1.0.0",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
+    "lodash": "^4.2.0",
     "postcss-loader": "^0.8.0",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "style-loader": "^0.13.0",

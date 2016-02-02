@@ -1,0 +1,8 @@
+build:
+  image: eu.phoria/drone-alpha-runner
+  commands:
+    - ci/build.sh
+
+cache:
+  mount:
+    - .git

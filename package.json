@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "dev": "webpack-dev-server --watch-poll --host 0.0.0.0"
+    "cover": "babel-istanbul cover ./node_modules/.bin/tape '!(build|node_modules)/**/*.test.js'",
+    "dev": "webpack-dev-server --watch-poll --host 0.0.0.0",
+    "test": "tape -r babel-register '!(build|node_modules)/**/*.test.js' | faucet"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,10 @@
   "homepage": "https://github.com/euphoria-io/embed-space#readme",
   "devDependencies": {
     "babel-core": "^6.4.5",
+    "babel-istanbul": "^0.6.0",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.4.3",
     "css-loader": "^0.23.1",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",

@@ -13,7 +13,7 @@ else
   echo 'Caching node_modules'
   tar cf node_modules-${NODE_MODULES_REV}.tar node_modules
   gzip -9 node_modules-${NODE_MODULES_REV}.tar
-  s3cmd put node_modules-${NODE_MODULES_REV}.tar.gz s3://alpha.euphoria.io/embed.space
+  s3cmd put node_modules-${NODE_MODULES_REV}.tar.gz s3://alpha.euphoria.io/embed.space/
 fi
 
 npm run-script cover
@@ -24,6 +24,6 @@ NODE_ENV=production HEIM_ORIGIN='https://alpha.euphoria.io' DOMAIN=alpha.euphori
 if [ ${DRONE_BRANCH} == master -o ${DRONE_BRANCH} == drone ]; then
   echo 'Uploading static assets'
   cd build
-  s3cmd put -m text/css *.css s3://alpha.euphoria.io/embed.space
-  s3cmd put *.html *.js *.map s3://alpha.euphoria.io/embed.space
+  s3cmd put -m text/css *.css s3://alpha.euphoria.io/embed.space/
+  s3cmd put *.html *.js *.map s3://alpha.euphoria.io/embed.space/
 fi
